@@ -5,21 +5,21 @@
     flex-direction: column;
     height: 100vh;
     max-width: 100%;
-    background-image: url('../../images/leaves.svg');
 }
 
-.image_wrapper img{
-    width: 300px;
+.image_wrapper {
+    width: 40vh;
     height: 30vh;
 }
 
 .content_wrapper {
+    max-width: 70%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 60px;
     background-image: linear-gradient(to right, #7897fd, #7f9ef2);
     padding: 100px;
-    max-width: 1200px;
     border-radius: 50px;
 }
 

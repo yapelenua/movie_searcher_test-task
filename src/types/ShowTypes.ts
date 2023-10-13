@@ -1,7 +1,7 @@
 export interface ShowDetails {
     id: number;
     name: string;
-    image: { medium: string} ;
+    image: { medium: string};
     genres: string[];
     rating: { average: number };
     url: string;
@@ -11,7 +11,7 @@ export interface ShowDetails {
 }
 
 export interface ShowItem {
-    id: number
+    id: number;
     name: string;
     image: { medium: string };
     rating: { average: number };

@@ -49,9 +49,9 @@ const DetailsScreen: React.FC = () => {
                 </div>
             ) : showDetails ? (
                 <div className="content_wrapper">
-                    <div className="image_wrapper">
+                    <div>
                         {image && image.medium ? (
-                            <img src={image.medium} alt={name} />
+                            <img src={image.medium} alt={name} className='movie_img'/>
                         ) : (
                             <div className="unload_image">
                                 <p>Image is not available</p>
@@ -73,7 +73,7 @@ const DetailsScreen: React.FC = () => {
                         <p>Status: {status || 'N/A'}</p>
                         <p>
                             Schedule:{' '}
-                            {schedule?.days.join(', ') + ' ,kefnsat ' + schedule?.time || 'No schedule available'}
+                            {schedule?.days.join(', ') + ' at ' + schedule?.time || 'No schedule available'}
                         </p>
                         <div
                             dangerouslySetInnerHTML={{ __html: summary || '' }}

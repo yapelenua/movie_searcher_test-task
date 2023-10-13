@@ -1,15 +1,9 @@
 import React from 'react';
 import './ShowListItem.scss'
-
-interface Show {
-    id: number;
-    name: string;
-    image: { medium: string };
-    rating: { average: number };
-  }
+import { ShowItem } from '../../types/ShowTypes';
 
 interface Props {
-  show: Show;
+  show: ShowItem;
 }
 
 const ShowListItem: React.FC<Props> = ({ show }) => {
@@ -25,7 +19,7 @@ const ShowListItem: React.FC<Props> = ({ show }) => {
         </div>
       )}
       <h2>{name}</h2>
-      <p>Rating: {rating.average | 0}</p>
+      <p>Rating: {rating.average || 0}</p>
     </div>
   );
 };

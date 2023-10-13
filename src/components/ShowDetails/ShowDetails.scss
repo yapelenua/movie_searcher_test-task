@@ -1,0 +1,35 @@
+.detail_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url('../../images/leaves.svg');
+}
+
+.image_wrapper img{
+    width: 300px;
+    height: 30vh;
+}
+
+.content_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background-image: linear-gradient(to right, #7897fd, #7f9ef2);
+    padding: 100px;
+    max-width: 1200px;
+    border-radius: 50px;
+}
+
+.desription_wrapper{
+    p{
+        font-size: 20px;
+    }
+}
+
+.home_icon{
+    height: 60px;
+    width: 60px;
+}

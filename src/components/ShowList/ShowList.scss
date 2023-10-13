@@ -1,0 +1,86 @@
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-image: linear-gradient(to right, #2e405e, #2f559c);
+  flex-direction: column;
+
+  input[type="text"] {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    height: 70px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    :hover {
+      background-color: #0056b3;
+    }
+
+    :focus {
+      outline: none;
+    }
+  }
+}
+
+.shows_wrapper {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.shows_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  list-style: none;
+  padding: 0;
+}
+
+.image_wrapper img {
+  width: 500px;
+  height: 500px;
+}
+
+
+.error_wrapper {
+  p {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  img {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.unserach_wrapper {
+  p {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  img {
+    width: 500px;
+    height: 500px;
+  }
+}

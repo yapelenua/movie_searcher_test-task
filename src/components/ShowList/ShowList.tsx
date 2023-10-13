@@ -31,6 +31,8 @@ const ShowList: React.FC = () => {
             } finally {
                 setIsLoading(false);
             }
+        }else {
+            setShows([]);
         }
     }, [search]);
 

@@ -16,12 +16,14 @@ const ShowList: React.FC = () => {
     const [shows, setShows] = useState<Show[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
+    const isSearchValid = search.length >= 2;
+
     const changeQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value)
     }
 
     const handleSearch = useCallback(async () => {
-        if (search.length >= 2) {
+        if (isSearchValid) {
             setIsLoading(true);
             try {
                 const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${search}`);
@@ -63,7 +65,7 @@ const ShowList: React.FC = () => {
             <div className="shows_wrapper">
                 {isLoading && <TailSpin color="red" radius={"8px"} />}
 
-                {search.length >= 2
+                {isSearchValid
                     && shows.length === 0
                     && !isLoading
                     &&(
@@ -74,7 +76,7 @@ const ShowList: React.FC = () => {
                     )
                 }
                 <ul className='shows_list'>
-                    {search.length < 2 ? (
+                    {!isSearchValid ? (
                         <div className="unserach_wrapper">
                             <p className='unserach_wrapper-paragraph'>Let's search some movies</p>
                             <img src={unserach} alt="unserach" className='unserach_wrapper-image'/>

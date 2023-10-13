@@ -37,6 +37,12 @@ const DetailsScreen: React.FC = () => {
         summary,
     } = showDetails || {};
 
+    const scheduleToString = (schedule?.days?.join(', ') || 'No days') + ' at ' + (schedule?.time || 'No time') || 'No schedule available';
+
+    const statusToText = status || 'N/A';
+
+    const ratingToText = rating ? rating.average : 'N/A';
+
     return (
         <div className="detail_wrapper">
             <Link to="/">
@@ -62,7 +68,7 @@ const DetailsScreen: React.FC = () => {
                     <div className="description_wrapper">
                         <h2>{name}</h2>
                         <p>Genres: {genres?.join(', ') || 'N/A'}</p>
-                        <p>Rating: {rating ? rating.average : 'N/A'}</p>
+                        <p>Rating: {ratingToText}</p>
                         <a
                             href={url}
                             target="_blank"
@@ -70,10 +76,9 @@ const DetailsScreen: React.FC = () => {
                         >
                             Show Details
                         </a>
-                        <p>Status: {status || 'N/A'}</p>
+                        <p>Status: {statusToText}</p>
                         <p>
-                            Schedule:{' '}
-                            {schedule?.days.join(', ') + ' at ' + schedule?.time || 'No schedule available'}
+                            Schedule:{scheduleToString}
                         </p>
                         <div
                             dangerouslySetInnerHTML={{ __html: summary || '' }}

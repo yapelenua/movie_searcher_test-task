@@ -2,17 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  background-image: linear-gradient(to right, #2e405e, #2f559c);
   flex-direction: column;
+
+  height: 50vh;
+
+  background-image: linear-gradient(to right, #2e405e, #2f559c);
 
   input[type="text"] {
     width: 100%;
     height: 50px;
     padding: 10px;
+
     font-size: 16px;
+
     border: 1px solid #ccc;
     border-radius: 5px;
+
     flex: 1;
     margin-right: 10px;
     outline: none;
@@ -20,17 +25,19 @@
 }
 
 .shows_wrapper {
-  margin: 0 auto;
   display: flex;
   max-width: 1200px;
   align-items: center;
   justify-content: center;
+
+  margin: 0 auto;
 }
 
 .shows_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   gap: 70px;
   list-style: none;
   padding: 0;
@@ -39,12 +46,13 @@
 
 .error_wrapper {
   max-width: 50%;
-  p {
+
+  &-paragraph {
     font-size: 36px;
     text-align: center;
   }
 
-  img {
+  &-image {
     width: 100%;
     height: 100%;
   }
@@ -53,7 +61,7 @@
 .image_wrapper{
   max-width: 50%;
 
-  img{
+  &-image{
     height: 100%;
     width: 100%;
     padding-bottom: 20px;
@@ -62,12 +70,13 @@
 
 .unserach_wrapper {
   max-width: 50%;
-  p {
+
+  &-paragraph {
     font-size: 36px;
     text-align: center;
   }
 
-  img {
+  &-image {
     width: 100%;
     height: 100%;
   }

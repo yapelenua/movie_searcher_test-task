@@ -10,16 +10,16 @@ const ShowListItem: React.FC<Props> = ({ show }) => {
   const { image, name, rating } = show;
 
   return (
-    <div className="show-card">
+    <div className="show_card">
       {image && image.medium ? (
-        <img src={image.medium} alt={name} />
+        <img className='show_card-img' src={image.medium} alt={name} />
       ) : (
         <div className="unload_image">
-          <p>Image is not aviable</p>
+          <p className='unload_image-paragraph'>Image is not aviable</p>
         </div>
       )}
-      <h2>{name}</h2>
-      <p>Rating: {rating.average || 0}</p>
+      <h2 className='show_card-header'>{name}</h2>
+      <p className='show_card-paragraph'>Rating: {rating.average || 0}</p>
     </div>
   );
 };

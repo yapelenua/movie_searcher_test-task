@@ -47,7 +47,7 @@ const ShowList: React.FC = () => {
         <div className='main_wrapper'>
             <div className="input_wrapper">
                 <div className="image_wrapper">
-                    <img src={couple} alt="couple" />
+                    <img src={couple} alt="couple" className='image_wrapper-image'/>
                 </div>
                 <div className="sub_wrapper">
                     <input
@@ -66,16 +66,16 @@ const ShowList: React.FC = () => {
                     && !isLoading
                     &&(
                         <div className="error_wrapper">
-                            <p>Sorry, nothing found with this search.</p>
-                            <img src={empty} alt="couple" />
+                            <p className='error_wrapper-paragraph'>Sorry, nothing found with this search.</p>
+                            <img src={empty} alt="couple" className='error_wrapper-image'/>
                         </div>
                     )
                 }
                 <ul className='shows_list'>
                     {search.length < 2 ? (
                         <div className="unserach_wrapper">
-                            <p>Let's search some movies</p>
-                            <img src={unserach} alt="unserach" />
+                            <p className='unserach_wrapper-paragraph'>Let's search some movies</p>
+                            <img src={unserach} alt="unserach" className='unserach_wrapper-image'/>
                         </div>
                     ) : (
                         shows.map((show) => (

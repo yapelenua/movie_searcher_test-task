@@ -1,4 +1,4 @@
-.show-card {
+.show_card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
@@ -14,31 +14,29 @@
       transform: scale(1.05);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
+
+    &-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    &-header {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      color: #383838;
+    }
+
+    &-paragraph {
+      font-size: 1rem;
+      color: #777;
+    }
   }
   
   a {
     text-decoration: none;
   }
   
-  .show-card{
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin: 10px 0;
-      color: #383838;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #777;
-    }
-  }
-
   .unload_image{
     width: 200px;
     height: 280px;
@@ -47,7 +45,8 @@
     align-items: center;
     justify-content: center;
 
-    p{
+    &-paragraph{
       font-size: 15px;
+      color: #777;
     }
   }

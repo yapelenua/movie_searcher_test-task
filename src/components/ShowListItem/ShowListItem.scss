@@ -1,13 +1,15 @@
 .show_card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
     padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+
     max-width: 200px;
     height: 440px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+
     text-decoration: none;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 
     
     &:hover {
@@ -35,18 +37,4 @@
   
   a {
     text-decoration: none;
-  }
-  
-  .unload_image{
-    width: 200px;
-    height: 280px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &-paragraph{
-      font-size: 15px;
-      color: #777;
-    }
   }

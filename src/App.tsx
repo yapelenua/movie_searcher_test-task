@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // Use HashRouter
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import ListScreen from './components/ShowList/ShowList';
 import DetailsScreen from './components/ShowDetails/ShowDetails';
 

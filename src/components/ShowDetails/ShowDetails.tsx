@@ -5,11 +5,12 @@ import axios from 'axios';
 import './ShowDetails.scss';
 import home from '../../images/home.svg';
 import { ShowDetails } from '../../types/ShowTypes';
+import NotFoundImage from '../NotFoundImage/NotFoundImage';
 
 const DetailsScreen: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [showDetails, setShowDetails] = useState<ShowDetails | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchShowDetails = async () => {
@@ -19,7 +20,7 @@ const DetailsScreen: React.FC = () => {
             } catch (error) {
                 console.error(error);
             } finally {
-                setLoading(false);
+                setIsLoading(false);
             }
         };
 
@@ -39,35 +40,29 @@ const DetailsScreen: React.FC = () => {
 
     const scheduleToString = (schedule?.days?.join(', ') || 'No days') + ' at ' + (schedule?.time || 'No time') || 'No schedule available';
 
-    const statusToText = status || 'N/A';
+    const statusToText = status || 'No status aviable';
 
-    const ratingToText = rating ? rating.average : 'N/A';
+    const ratingToText = rating?.average|| 'No rating aviable';
+
+    const genresToText = genres?.join(', ') || 'No genres aviable'
 
     return (
         <div className="detail_wrapper">
             <Link to="/">
                 <img src={home} alt={name} className="home_icon" />
             </Link>
-
-            {loading ? (
+            {isLoading ? (
                 <div className="loading">
                     <TailSpin color="blue" radius={8} />
                 </div>
             ) : showDetails ? (
                 <div className="content_wrapper">
-                    <div>
-                        {image && image.medium ? (
-                            <img src={image.medium} alt={name} className='movie_img'/>
-                        ) : (
-                            <div className="unload_image">
-                                <p>Image is not available</p>
-                            </div>
-                        )}
-                    </div>
+
+                    <NotFoundImage image={image} name={name}/>
 
                     <div className="description_wrapper">
                         <h2>{name}</h2>
-                        <p>Genres: {genres?.join(', ') || 'N/A'}</p>
+                        <p>Genres: {genresToText}</p>
                         <p>Rating: {ratingToText}</p>
                         <a
                             href={url}
@@ -76,7 +71,9 @@ const DetailsScreen: React.FC = () => {
                         >
                             Show Details
                         </a>
-                        <p>Status: {statusToText}</p>
+                        <p>
+                            Status: {statusToText}
+                        </p>
                         <p>
                             Schedule:{scheduleToString}
                         </p>

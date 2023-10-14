@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+##Deploy
+
+Hey!Check my result by this link [https://main--regal-licorice-9dc8fa.netlify.app/]
+
 ## Available Scripts
 
 In the project directory, you can run:
